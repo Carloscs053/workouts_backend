@@ -20,9 +20,6 @@ const getAllWorkouts = (req, res) => {
   }
 };
 
-// Método que trae un solo entrenamiento
-// src/controllers/workout_controller.js
-
 const getOneWorkout = (req, res) => {
   const {
     params: { workoutId },
@@ -39,6 +36,7 @@ const getOneWorkout = (req, res) => {
     const workout = workout_service.getOneWorkout(workoutId);
     return res.status(200).send({ status: "OK", data: workout });
   } catch (error) {
+    if (res.headersSent) return;
     res.status(error?.status || 500).send({
       status: "FAILED",
       data: { error: error?.message || error },
