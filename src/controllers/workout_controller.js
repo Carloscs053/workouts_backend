@@ -37,7 +37,7 @@ const getOneWorkout = (req, res) => {
     return res.status(200).send({ status: "OK", data: workout });
   } catch (error) {
     if (res.headersSent) return;
-    res.status(error?.status || 500).send({
+    return res.status(error?.status || 500).send({
       status: "FAILED",
       data: { error: error?.message || error },
     });
