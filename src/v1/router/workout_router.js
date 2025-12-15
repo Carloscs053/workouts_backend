@@ -8,7 +8,7 @@ const cache = apicache.middleware;
 // Endpoints de las clases
 //router.get("/", workoutController.getAllWorkouts);
 router.get("/schedule", workoutController.getAllSchedules);
-router.post("/schedule", workoutController.addNewSchedule);
+router.post("/newSchedule", workoutController.addNewSchedule);
 router.delete("/schedule/:scheduleId", workoutController.deleteOneSchedule);
 
 // Endpoints de los entrenamientos
