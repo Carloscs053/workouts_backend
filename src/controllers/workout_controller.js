@@ -21,23 +21,23 @@ const getAllWorkouts = (req, res) => {
 };
 
 // Método que trae un solo entrenamiento
+// src/controllers/workout_controller.js
+
 const getOneWorkout = (req, res) => {
   const {
-    // Desestructuramos la petición
-    // De la desestructuración, nos quedamos con lo que nos interesa, la ID del entrenamiento
     params: { workoutId },
-  } = req; // Indicamos que viene del request
+  } = req;
+
   if (!workoutId) {
-    // Si está vacío le decimos que salga
     return res.status(400).send({
       status: "FAILED",
       data: { error: "Parameter 'workoutID' can not be empty" },
     });
   }
+
   try {
-    // guardamos en una variable la data que nos traiga el service
     const workout = workout_service.getOneWorkout(workoutId);
-    res.status(200).send({ status: "OK", data: workout }); // enviamos la respuesta de ok y le enviamos la data
+    return res.status(200).send({ status: "OK", data: workout });
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",

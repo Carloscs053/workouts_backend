@@ -231,19 +231,6 @@
       "enrolledMemberIds": []
     },
     {
-      "id": "sched_04",
-      "workoutId": "7c2b5d1a-9988-44aa-bb77-33221100aabb",
-      "date": "2025-12-02",
-      "startTime": "18:30",
-      "endTime": "19:30",
-      "coach": "Tia-Clair Toomey",
-      "capacity": 15,
-      "enrolledMemberIds": [
-        "2b9130d4-47a7-4085-800e-0144f6a46059",
-        "99887766-5544-3322-1100-aabbccddeeff"
-      ]
-    },
-    {
       "id": "sched_05",
       "workoutId": "d99e1234-5678-90ab-cdef-1234567890ab",
       "date": "2025-12-03",
